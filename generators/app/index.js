@@ -36,12 +36,12 @@ module.exports = class extends Generator {
       // Print success or error
       process.on('close', code => {
         if (code) {
-          this.log(`${chalk.red('ERROR!')} - Ocurrió un error al iniciar DREAMBOT para ${chalk.bold(`BTC_${currencies[index]}`)}:`);
-          this.log(code);
+          this.log(`${chalk.green('YEAH!')} - Iniciando DREAMBOT para BTC_${currencies[index]}. :) use - gmon -r 10  - para ver el monitor. `);
+
           return;
         }
 
-        this.log(`${chalk.green('YEAH!')} - Iniciando DREAMBOT para BTC_${currencies[index]}. :)`);
+        this.log(`${chalk.green('YEAH!')} - Iniciando DREAMBOT para BTC_${currencies[index]}. :) use - gmon -r 10  - para ver el monitor `);
 
         // Start next bot if there are currencies left.
         index++;
@@ -158,14 +158,14 @@ module.exports = class extends Generator {
         when: props => props.buyStrategy === 'BB',
         type: 'input',
         name: 'bbLow',
-        message: '[LOW_BB] Por ciento. Comprar si el precio es x% o menos por encima de la banda Bollinger más baja:',
+        message: '[LOW_BB] en porcentaje. Comprar si el precio es x% o menos por encima de la banda Bollinger más baja:',
         default: defaultValues.bbLow,
         store: true
       }, {
         when: props => props.buyStrategy === 'GAIN',
         type: 'input',
         name: 'gainBuyLevel',
-        message: '[BUY_LEVEL] Por ciento. Comprar si el precio es x% por debajo del valor de ema inferior:',
+        message: '[BUY_LEVEL] en porcentaje. Comprar si el precio es x% por debajo del valor de ema inferior:',
         default: defaultValues.gainBuyLevel,
         store: true
       }, {
@@ -179,7 +179,7 @@ module.exports = class extends Generator {
         when: props => props.buyStrategy === 'STEPGAIN',
         type: 'input',
         name: 'stepgainBuyLevelOne',
-        message: '[BUYLVL1] Por ciento. Comprar cuando el precio cae en x% o menos:',
+        message: '[BUYLVL1] en porcentaje. Comprar cuando el precio cae en x% o menos:',
         default: defaultValues.stepgainBuyLevelOne,
         store: true
       }, {
@@ -204,14 +204,14 @@ module.exports = class extends Generator {
         when: props => props.sellStrategy === 'BB',
         type: 'input',
         name: 'bbHigh',
-        message: '[HIGH_BB] Por ciento. Vender si el precio es x% o menos debajo de la banda más alta de Bollinger:',
+        message: '[HIGH_BB] en porcentaje. Vender si el precio es x% o menos debajo de la banda más alta de Bollinger:',
         default: defaultValues.bbHigh,
         store: true
       }, {
         when: props => props.sellStrategy === 'GAIN',
         type: 'input',
         name: 'gainSellLevel',
-        message: '[GAIN] Por ciento. Vender si el precio es x% sobre el precio comprado:',
+        message: '[GAIN] en porcentaje. Vender si el precio es x% sobre el precio comprado:',
         default: defaultValues.gainSellLevel,
         store: true
       }, {
@@ -225,21 +225,21 @@ module.exports = class extends Generator {
         when: props => props.sellStrategy === 'STEPGAIN',
         type: 'input',
         name: 'stepgainSellLevelOne',
-        message: '[SELLLVL1] Por ciento. Vender si el precio es x% sobre el precio comprado:',
+        message: '[SELLLVL1] en porcentaje. Vender si el precio es x% sobre el precio comprado:',
         default: defaultValues.stepgainSellLevelOne,
         store: true
       }, {
         when: props => props.sellStrategy === 'STEPGAIN',
         type: 'input',
         name: 'stepgainSellLevelTwo',
-        message: '[SELLLVL2] Por ciento. Vender si el precio es x% sobre el precio comprado:',
+        message: '[SELLLVL2] en porcentaje. Vender si el precio es x% sobre el precio comprado:',
         default: defaultValues.stepgainSellLevelTwo,
         store: true
       }, {
         when: props => props.sellStrategy === 'STEPGAIN',
         type: 'input',
         name: 'stepgainSellLevelThree',
-        message: '[SELLLVL3] Por ciento. Vender si el precio es x% sobre el precio comprado:',
+        message: '[SELLLVL3] en porcentaje. Vender si el precio es x% sobre el precio comprado:',
         default: defaultValues.stepgainSellLevelThree,
         store: true
       },
