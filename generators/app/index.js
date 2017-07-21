@@ -273,7 +273,7 @@ module.exports = class extends Generator {
         when: () => this.options.action === 'init',
         type: 'checkbox',
         name: 'currenciesToStart',
-        message: 'Selecciona los pares que desea iniciar automáticamente ahora:',
+        message: 'Selecciona un par para iniciar ahora mismo:',
         choices: props => props.currencies,
         default: props => props.currencies,
         store: true
