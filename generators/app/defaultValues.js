@@ -12,8 +12,8 @@ module.exports = {
   buyStrategy: 'BB',
   sellStrategy: 'BB',
 
-  bbLow: 25,
-  bbHigh: 25,
+  bbLow: 20,
+  bbHigh: 20,
 
   gainBuyLevel: 3,
   gainSellLevel: 5,
@@ -29,7 +29,7 @@ module.exports = {
   stepgainSellLevelTwo: 5,
   stepgainSellLevelThree: 70,
 
-  botSleepDelay: 60,
-  botOnFailSleepDelay: 100
+  botSleepDelay: 80,
+  botOnFailSleepDelay: 120
 
 };
