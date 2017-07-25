@@ -71,7 +71,6 @@ module.exports = class extends Generator {
       this.log(`  Tu necesitas tu ${chalk.bold.green('API key')} y ${chalk.bold.green('API secret')} para configurar los archivos de DREAMBOT.`);
       this.log('');
       this.log(`  Presiona ${chalk.bold('CTRL+C')} si tu quieres terminar este proceso.`);
-      this.log(`  Ingresa ${chalk.bold('ginit')} si tu quieres reiniciar el proceso.`);
       this.log(chalk.green(' \\-----------------------------------------------------------------------------------/'));
       this.log('');
     }

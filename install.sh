@@ -37,7 +37,7 @@ apt-get -y -qq install nodejs > /dev/null 2>&1
 logMessage "(3/6) Instalando Herramientas"
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 apt-get -y -qq install unzip > /dev/null 2>&1
-npm install -g pm2 yo@1.8.5 generator-dreambot dreambot-monitor > /dev/null 2>&1
+npm install -g pm2 yo@2.0.0 generator-dreambot dreambot-monitor > /dev/null 2>&1
 
 
 logMessage "(4/6) Instalando TraderBot"
