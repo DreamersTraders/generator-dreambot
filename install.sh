@@ -42,7 +42,7 @@ logMessage "(4/6) Instalando DreamBot"
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 wget -q https://github.com/DreamersTraders/dreambot/releases/download/DBv2.1/dreambot_v2.1.zip -P /opt/
-sudo unzip -o -qq /opt/dreambot_v2.1.zip -d /opt/dreambot
+sudo unzip -o -qq /opt/dreambot_v2.1.zip -d /opt/
 
 # create folder for the current version.
 #sudo mkdir /opt/dreambot_v2.1 -p
@@ -52,7 +52,7 @@ sudo unzip -o -qq /opt/dreambot_v2.1.zip -d /opt/dreambot
 
 # creates a symbolic link to the DREAMBOT folder.
 #sudo rm /opt/dreambot > /dev/null 2>&1
-sudo ln -s /opt/dreambot_v2.1 /opt/dreambot
+sudo ln -s /opt/dreambot /opt/dreambot
 
 # Cleanup
 #sudo rm /opt/dreambot_v2.1.zip
