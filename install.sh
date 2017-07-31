@@ -42,7 +42,7 @@ logMessage "(4/6) Instalando DreamBot"
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 wget -q https://github.com/DreamersTraders/dreambot/releases/download/DBv2.1/dreambot_v2.1.zip -P /opt/
-sudo unzip -o -qq /opt/dreambot_v2.1.zip -d /opt/dreambot_v2.1
+sudo unzip -o -qq /opt/dreambot_v2.1.zip -d /opt/dreambot
 
 # create folder for the current version.
 #sudo mkdir /opt/dreambot_v2.1 -p
@@ -74,6 +74,7 @@ echo "alias dstart='pm2 start'" >> ~/.bashrc
 echo "alias dstop='pm2 stop'" >> ~/.bashrc
 echo "alias deditar='sudo nano config.js'" >> ~/.bashrc
 echo "alias diniciar='pm2 start dreambot-linux'" >> ~/.bashrc
+echo "alias dmonitor='pm2 monit'" >> ~/.bashrc
 
 
 logMessage "(6/6) Generador de archivos"
