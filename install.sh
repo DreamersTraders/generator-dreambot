@@ -48,7 +48,7 @@ sudo unzip -o -qq /opt/dreambot_v2.1.zip -d /opt/unzip-tmp
 sudo mkdir /opt/dreambot_v2.1 -p
 
 # Copy only the executables.
-cp /opt/unzip-tmp/dreambot-* /opt/dreambot_v2.1
+cp /opt/unzip-tmp/* /opt/dreambot_v2.1
 
 # creates a symbolic link to the DREAMBOT folder.
 rm /opt/dreambot > /dev/null 2>&1
