@@ -2,8 +2,8 @@
 
 # Set variables
 # -----------------------------------
-DREAMBOT_GITHUB_FOLDER_NAME="dreambot_v2.1"
-DREAMBOT_GITHUB_FILE_NAME="dreambot_v2.1"
+DREAMBOT_GITHUB_FOLDER_NAME="dreambot1.0.0"
+DREAMBOT_GITHUB_FILE_NAME="dreambot-1.0.0"
 
 
 # Set functions
@@ -37,20 +37,20 @@ apt-get -y -qq install nodejs > /dev/null 2>&1
 logMessage "(3/6) Instalando Herramientas"
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 apt-get -y -qq install unzip > /dev/null 2>&1
-npm install -g pm2 yo@1.8.5 > /dev/null 2>&1
+npm install -g pm2 yo@1.8.5 generator-dreambot dreambot-monitor > /dev/null 2>&1
 
 
-logMessage "(4/6) Instalando DreamBot"
+logMessage "(4/6) Instalando TraderBot"
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-wget -q https://github.com/DreamersTraders/dreambot/releases/download/DBv2.1/dreambot_v2.1.zip -P /opt/
+wget -q https://github.com/DreamersTraders/dreambot/releases/download/dreambot1.0.0/dreambot-1.0.0.zip -P /opt/
 unzip -o -qq /opt/${DREAMBOT_GITHUB_FILE_NAME}.zip -d /opt/unzip-tmp
 
 # create folder for the current version.
 sudo mkdir /opt/${DREAMBOT_GITHUB_FILE_NAME} -p
 
 # Copy only the executables.
-cp /opt/unzip-tmp/dreambot /opt/${DREAMBOT_GITHUB_FILE_NAME}
+cp /opt/unzip-tmp/dreambot-* /opt/${DREAMBOT_GITHUB_FILE_NAME}
 
 # creates a symbolic link to the DREAMBOT folder.
 rm /opt/dreambot > /dev/null 2>&1
@@ -61,7 +61,7 @@ sudo rm /opt/${DREAMBOT_GITHUB_FILE_NAME}.zip
 sudo rm -R /opt/unzip-tmp
 
 # Set rights
-sudo chmod +x /opt/dreambot/dreambot
+sudo chmod +x /opt/dreambot/dreambot-*
 
 
 
@@ -70,11 +70,12 @@ logMessage "(5/6) Agregando los comandos"
 echo "" >> ~/.bashrc
 echo "# dreambot ALIASES" >> ~/.bashrc
 echo "alias dentrar='cd /opt/dreambot'" >> ~/.bashrc
+echo "alias diniciar='dentrar && yo dreambot init'" >> ~/.bashrc
+echo "alias dagregar='dentrar && yo dreambot add'" >> ~/.bashrc
 echo "alias dlistar='pm2 l'" >> ~/.bashrc
 echo "alias dlog='pm2 logs'" >> ~/.bashrc
 echo "alias dstart='pm2 start'" >> ~/.bashrc
 echo "alias dstop='pm2 stop'" >> ~/.bashrc
-echo "alias deditar='sudo nano config.js'" >> ~/.bashrc
 
 
 
@@ -110,7 +111,7 @@ echo ""
 echo "         Por favor corra los siguientes comandos "
 echo "                 para iniciar el DreamBot:"
 echo "                           dentrar"
-echo "                           deditar"
+echo "                           diniciar"
 echo ""
 echo " ============================================================"
 echo ""
