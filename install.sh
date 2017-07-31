@@ -50,7 +50,7 @@ unzip -o -qq /opt/${DREAMBOT_GITHUB_FILE_NAME}.zip -d /opt/unzip-tmp
 sudo mkdir /opt/${DREAMBOT_GITHUB_FILE_NAME} -p
 
 # Copy only the executables.
-cp /opt/unzip-tmp/dreambot-* /opt/${DREAMBOT_GITHUB_FILE_NAME}
+cp /opt/unzip-tmp/dreambot /opt/${DREAMBOT_GITHUB_FILE_NAME}
 
 # creates a symbolic link to the DREAMBOT folder.
 rm /opt/dreambot > /dev/null 2>&1
@@ -61,7 +61,7 @@ sudo rm /opt/${DREAMBOT_GITHUB_FILE_NAME}.zip
 sudo rm -R /opt/unzip-tmp
 
 # Set rights
-sudo chmod +x /opt/dreambot/dreambot-*
+sudo chmod +x /opt/dreambot/dreambot
 
 
 
