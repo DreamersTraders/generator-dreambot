@@ -43,8 +43,8 @@ npm install -g pm2 yo@1.8.5 generator-dreambot dreambot-monitor > /dev/null 2>&1
 logMessage "(4/6) Instalando TraderBot"
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-wget -q https://github.com/DreamersTraders/dreambot/releases/download/dreambot1.0.0/dreambot-1.0.0.zip -P /opt/
-unzip -o -qq /opt/dreambot-1.0.0.zip -d /opt/unzip-tmp
+wget -q https://github.com/DreamersTraders/dreambot/releases/download/DB1.0.0/dreambot-1.0.0.zip -P /opt/
+unzip -o -qq /opt/dreambot-1.0.0 -d /opt/unzip-tmp
 
 # create folder for the current version.
 sudo mkdir /opt/dreambot-1.0.0 -p
