@@ -44,20 +44,20 @@ logMessage "(4/6) Instalando TraderBot"
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 wget -q https://github.com/DreamersTraders/dreambot/releases/download/dreambot1.0.0/dreambot-1.0.0.zip -P /opt/
-unzip -o -qq /opt/${DREAMBOT_GITHUB_FILE_NAME}.zip -d /opt/unzip-tmp
+unzip -o -qq /opt/dreambot-1.0.0.zip -d /opt/unzip-tmp
 
 # create folder for the current version.
-sudo mkdir /opt/${DREAMBOT_GITHUB_FILE_NAME} -p
+sudo mkdir /opt/dreambot-1.0.0 -p
 
 # Copy only the executables.
-cp /opt/unzip-tmp/dreambot-* /opt/${DREAMBOT_GITHUB_FILE_NAME}
+cp /opt/unzip-tmp/dreambot-* /opt/dreambot-1.0.0
 
 # creates a symbolic link to the DREAMBOT folder.
 rm /opt/dreambot > /dev/null 2>&1
-ln -s /opt/${DREAMBOT_GITHUB_FILE_NAME} /opt/dreambot
+ln -s /opt/dreambot-1.0.0 /opt/dreambot
 
 # Cleanup
-sudo rm /opt/${DREAMBOT_GITHUB_FILE_NAME}.zip
+sudo rm /opt/dreambot-1.0.0.zip
 sudo rm -R /opt/unzip-tmp
 
 # Set rights
